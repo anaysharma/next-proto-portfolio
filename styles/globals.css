@@ -1,101 +1,125 @@
-@import url("https://fonts.googleapis.com/css2?family=Pathway+Extreme&display=swap");
+@import url('https://fonts.googleapis.com/css2?family=Pathway+Extreme&display=swap');
+
+html {
+	background-color: black;
+}
 
 :root {
-  --cursor: auto;
+	--cursor: auto;
 }
 
 * {
-  box-sizing: border-box;
-  cursor: var(--cursor);
+	box-sizing: border-box;
+	cursor: var(--cursor);
 }
 
 body {
-  margin: 0;
-  font-family: "Pathway extreme";
-  background-color: black;
+	margin: 0;
+	font-family: 'Pathway extreme';
+	opacity: 0;
+}
+
+div#__next {
+	opacity: 0;
+	scale: 0.8;
+	transition: 1.2s;
+}
+
+body.rendered > #__next {
+	opacity: 1;
+	scale: 1;
 }
 
 .cursor {
-  transition: height 180ms, outline-offset 180ms;
+	transition: height 180ms, outline-offset 180ms;
 }
 
 .content {
-  transition: transform 300ms;
+	transition: transform 300ms;
 }
 
 #page-loader {
-  transition: 800ms;
-  pointer-events: none;
+	transition: transform 1s;
+	pointer-events: none;
+}
+
+.loaded {
+	transform: translateY(-100%);
 }
 
 .newtons-cradle {
-  --uib-size: 50px;
-  --uib-speed: 1.2s;
-  --uib-color: #fff;
-  position: relative;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  width: var(--uib-size);
-  height: var(--uib-size);
+	--uib-size: 50px;
+	--uib-speed: 1.2s;
+	--uib-color: #fff;
+	position: relative;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	width: var(--uib-size);
+	height: var(--uib-size);
+	transition: opacity 800ms;
+}
+
+.loaded > .newtons-cradle {
+	opacity: 0;
 }
 
 .newtons-cradle__dot {
-  position: relative;
-  display: flex;
-  align-items: center;
-  height: 100%;
-  width: 25%;
-  transform-origin: center top;
+	position: relative;
+	display: flex;
+	align-items: center;
+	height: 100%;
+	width: 25%;
+	transform-origin: center top;
 }
 
 .newtons-cradle__dot::after {
-  content: "";
-  display: block;
-  width: 100%;
-  height: 25%;
-  border-radius: 50%;
-  background-color: var(--uib-color);
+	content: '';
+	display: block;
+	width: 100%;
+	height: 25%;
+	border-radius: 50%;
+	background-color: var(--uib-color);
 }
 
 .newtons-cradle__dot:first-child {
-  animation: swing var(--uib-speed) linear infinite;
+	animation: swing var(--uib-speed) linear infinite;
 }
 
 .newtons-cradle__dot:last-child {
-  animation: swing2 var(--uib-speed) linear infinite;
+	animation: swing2 var(--uib-speed) linear infinite;
 }
 
 @keyframes swing {
-  0% {
-    transform: rotate(0deg);
-    animation-timing-function: ease-out;
-  }
+	0% {
+		transform: rotate(0deg);
+		animation-timing-function: ease-out;
+	}
 
-  25% {
-    transform: rotate(70deg);
-    animation-timing-function: ease-in;
-  }
+	25% {
+		transform: rotate(70deg);
+		animation-timing-function: ease-in;
+	}
 
-  50% {
-    transform: rotate(0deg);
-    animation-timing-function: linear;
-  }
+	50% {
+		transform: rotate(0deg);
+		animation-timing-function: linear;
+	}
 }
 
 @keyframes swing2 {
-  0% {
-    transform: rotate(0deg);
-    animation-timing-function: linear;
-  }
+	0% {
+		transform: rotate(0deg);
+		animation-timing-function: linear;
+	}
 
-  50% {
-    transform: rotate(0deg);
-    animation-timing-function: ease-out;
-  }
+	50% {
+		transform: rotate(0deg);
+		animation-timing-function: ease-out;
+	}
 
-  75% {
-    transform: rotate(-70deg);
-    animation-timing-function: ease-in;
-  }
+	75% {
+		transform: rotate(-70deg);
+		animation-timing-function: ease-in;
+	}
 }
