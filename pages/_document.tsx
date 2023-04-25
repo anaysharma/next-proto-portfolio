@@ -7,15 +7,7 @@ export default function Document() {
 			<body>
 				<div
 					id="page-loader"
-					style={{
-						position: 'fixed',
-						height: '100vh',
-						width: '100vw',
-						background: 'black',
-						zIndex: 999,
-						display: 'grid',
-						placeItems: 'center',
-					}}
+					className="fixed inset-0 bg-black z-50 grid place-items-center"
 				>
 					<div className="newtons-cradle">
 						<div className="newtons-cradle__dot"></div>

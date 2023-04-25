@@ -5,6 +5,10 @@ import About from '../components/About';
 import Navbar from '../components/Navbar';
 import Cursor from '../components/Cursor';
 
+import { Barlow } from 'next/font/google';
+
+const inter = Barlow({ subsets: ['latin'], weight: ['400'] });
+
 export default function Home() {
 	const [navlink, setNavlink] = useState<string>('home');
 
@@ -18,17 +22,11 @@ export default function Home() {
 			</Head>
 
 			<main
-				style={{
-					background: 'black',
-					height: '100vh',
-					color: 'white',
-					alignItems: 'center',
-					justifyContent: 'center',
-					display: 'flex',
-					flexDirection: 'column',
-					backgroundImage: "url('/bg.webp')",
-					backgroundSize: 'cover',
-				}}
+				className={
+					inter.className +
+					' h-screen items-center justify-center flex flex-col bg-cover'
+				}
+				style={{ backgroundImage: "url('/bg.png')" }}
 			>
 				{navlink === 'home' && <About setNavlink={setNavlink} />}
 

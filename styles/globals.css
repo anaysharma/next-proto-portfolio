@@ -1,22 +1,29 @@
-@import url('https://fonts.googleapis.com/css2?family=Pathway+Extreme&display=swap');
+/* @import url('https://fonts.googleapis.com/css2?family=Pathway+Extreme&display=swap'); */
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
 
 html {
 	background-color: black;
 }
 
-:root {
-	--cursor: auto;
+:focus-visible {
+	outline: 3px solid #e37f6c;
+	outline-offset: -5px;
 }
 
 * {
 	box-sizing: border-box;
-	cursor: var(--cursor);
+	cursor: none !important;
 }
 
 body {
 	margin: 0;
-	font-family: 'Pathway extreme';
+	/* font-family: 'Pathway extreme'; */
 	opacity: 0;
+	color: #e7e9e6;
+	background-color: black;
 }
 
 div#__next {
@@ -41,6 +48,7 @@ body.rendered > #__next {
 #page-loader {
 	transition: transform 1s;
 	pointer-events: none;
+	cursor: auto !important;
 }
 
 .loaded {

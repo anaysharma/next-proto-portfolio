@@ -6,7 +6,6 @@ export default function App({ Component, pageProps }: AppProps) {
 	useEffect(() => {
 		if (typeof window !== 'undefined') {
 			const loader = document.getElementById('page-loader');
-			const root = document.querySelector(':root') as HTMLElement;
 
 			document.body.style.opacity = '1';
 			document.body.classList.add('rendered');
@@ -15,7 +14,6 @@ export default function App({ Component, pageProps }: AppProps) {
 				loader.classList.add('loaded');
 				setTimeout(() => {
 					loader.style.display = 'none';
-					root.style.setProperty('--cursor', 'none');
 				}, 1000);
 			}
 		}
