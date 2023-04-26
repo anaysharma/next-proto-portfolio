@@ -63,15 +63,6 @@ export default function Home() {
 			</main>
 
 			<Cursor />
-			<div className="absolute inset-0 -z-50 overflow-hidden">
-				<Image
-					className="h-full w-full object-cover"
-					src="/bg.webp"
-					alt="background image"
-					width={2048}
-					height={1152}
-				/>
-			</div>
 		</>
 	);
 }

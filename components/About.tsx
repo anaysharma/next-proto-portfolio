@@ -46,11 +46,10 @@ export default function About(props: { setNavlink: Function }) {
 		<div className="flex gap-2" ref={sectionScope}>
 			<motion.div
 				layoutId="min"
-				className="mx-auto flex flex-col gap-1 p-5 backdrop-blur backdrop-brightness-200"
+				className="mx-auto flex flex-col gap-1 border border-black p-5 backdrop-blur-sm backdrop-brightness-150 backdrop-saturate-150"
 				style={{
 					backgroundImage: 'radial-gradient( #0000 1px, #000 1px )',
 					backgroundSize: '4px 4px',
-					border: '1px solid black',
 					backgroundPosition: '4px 4px',
 					height: 218,
 					width: 514,
@@ -74,7 +73,7 @@ export default function About(props: { setNavlink: Function }) {
 				<motion.p
 					initial={{ y: 20, opacity: 0 }}
 					animate={{ y: 0, opacity: 1 }}
-					transition={{ duration: 1, delay: 0.6 }}
+					transition={{ duration: 0.8, delay: 0.6 }}
 					className="m-0 bg-black px-4 py-2"
 				>
 					A very passionate front end dev developing pixel-perfect, User
@@ -83,7 +82,7 @@ export default function About(props: { setNavlink: Function }) {
 				<motion.div
 					initial={{ y: 20, opacity: 0 }}
 					animate={{ y: 0, opacity: 1 }}
-					transition={{ duration: 1, delay: 1 }}
+					transition={{ duration: 0.8, delay: 0.8 }}
 					className="mt-auto flex w-full items-center justify-between gap-4"
 				>
 					<motion.a
