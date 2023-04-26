@@ -35,7 +35,7 @@ export default function Section(props: {
 				className="fixed left-28 top-14 h-px origin-left"
 				style={{
 					scaleX: scrollYProgress,
-					width: 'calc(100% - 440px)',
+					width: 'calc(100% - 420px)',
 					background: '#d9dacb',
 				}}
 			></motion.div>

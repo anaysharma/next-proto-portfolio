@@ -42,6 +42,10 @@ body.rendered > #__next {
 	cursor: wait !important;
 }
 
+.section-btn {
+	position: relative;
+}
+
 .loaded {
 	transform: translateY(-100%);
 }
