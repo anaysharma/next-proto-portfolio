@@ -7,14 +7,12 @@ export default function Cursor() {
 
 	return (
 		<div
-			className="cursor fixed top-0 left-0 rounded-full bg-transparent pointer-events-none z-50"
+			className="cursor pointer-events-none fixed left-0 top-0 z-50 aspect-square rounded-full bg-transparent backdrop-invert"
 			style={{
 				height: size,
-				aspectRatio: 1,
 				transform: `translate(calc(${x}px - 50%), calc(${y}px - 50%))`,
-				backdropFilter: 'invert()',
 				outline: '3px solid #e37f6c',
-				outlineOffset: (-1 * size) / 2 + 20,
+				outlineOffset: (-1 * size) / 2 + 15,
 			}}
 		></div>
 	);

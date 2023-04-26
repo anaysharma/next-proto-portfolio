@@ -1,13 +1,14 @@
 import { useState } from 'react';
 import Head from 'next/head';
-import Section from '../components/Section';
+
+import { Abel } from 'next/font/google';
 import About from '../components/About';
 import Navbar from '../components/Navbar';
+import Section from '../components/Section';
 import Cursor from '../components/Cursor';
+import Image from 'next/image';
 
-import { Barlow } from 'next/font/google';
-
-const inter = Barlow({ subsets: ['latin'], weight: ['400'] });
+const abel = Abel({ subsets: ['latin'], weight: ['400'] });
 
 export default function Home() {
 	const [navlink, setNavlink] = useState<string>('home');
@@ -23,10 +24,9 @@ export default function Home() {
 
 			<main
 				className={
-					inter.className +
-					' h-screen items-center justify-center flex flex-col bg-cover'
+					abel.className +
+					' relative flex h-screen flex-col items-center justify-center bg-cover'
 				}
-				style={{ backgroundImage: "url('/bg.png')" }}
 			>
 				{navlink === 'home' && <About setNavlink={setNavlink} />}
 
@@ -63,6 +63,15 @@ export default function Home() {
 			</main>
 
 			<Cursor />
+			<div className="absolute inset-0 -z-50 overflow-hidden">
+				<Image
+					className="h-full w-full object-cover"
+					src="/bg.webp"
+					alt="background image"
+					width={2048}
+					height={1152}
+				/>
+			</div>
 		</>
 	);
 }

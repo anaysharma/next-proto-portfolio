@@ -17,23 +17,22 @@ export default function Section(props: {
 		<motion.div
 			ref={containerRef}
 			layoutId={id}
-			className="absolute inset-0 bg-black grid place-items-center overflow-y-auto"
+			className="absolute inset-0 grid place-items-center overflow-y-auto bg-black"
 			transition={{
-				layout: { duration: 0.8, ease: cubicBezier(0.3, 0.4, 0, 1) },
+				layout: { duration: 0.7, ease: cubicBezier(0.3, 0.4, 0, 1) },
 			}}
 		>
 			<div style={{ height: '200vh' }}></div>
 			<motion.div
-				className="h-3/4 w-80 border-red-600"
+				className="h-60 w-80 bg-yellow-400"
 				initial={{ x: 400 }}
 				whileInView={{ x: 0 }}
-				transition={{ duration: 1 }}
 			>
 				<div>{content}</div>
 			</motion.div>
 			<div style={{ height: '200vh' }}></div>
 			<motion.div
-				className="h-px fixed top-14 left-28 origin-left"
+				className="fixed left-28 top-14 h-px origin-left"
 				style={{
 					scaleX: scrollYProgress,
 					width: 'calc(100% - 440px)',
