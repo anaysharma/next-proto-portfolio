@@ -16,7 +16,7 @@ export default function Navbar(props: {
 				{ y: [-50, 0], opacity: [0, 1] },
 				{ delay: stagger(0.1), duration: 0.5 }
 			);
-		}, 500);
+		}, 400);
 	}, [animate]);
 
 	return (
@@ -43,6 +43,9 @@ export default function Navbar(props: {
 							layoutId="navlink-bg"
 							className="absolute inset-0 z-0 rounded-full"
 							style={{ background: '#d9dacb' }}
+							transition={{
+								duration: 0.2,
+							}}
 						></motion.div>
 					)}
 				</li>

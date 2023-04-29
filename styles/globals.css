@@ -20,17 +20,28 @@ body {
 
 div#__next {
 	opacity: 0;
-	scale: 0.8;
-	transition: scale 1s 200ms;
-	background-image: url('/bg.svg');
+	scale: 0.7;
+	transition: scale 1s 200ms, opacity 1s 200ms;
 	background-color: #d9dacb;
+	/* background-image: url('/bg.webp');
 	background-size: contain;
-	background-repeat: no-repeat;
+	background-repeat: no-repeat; */
 }
 
 body.rendered > #__next {
 	opacity: 1;
 	scale: 1;
+}
+
+@media (prefers-reduced-motion) {
+	div#__next {
+		opacity: 0;
+		scale: 1;
+	}
+	.loaded {
+		opacity: 0;
+		transform: translateY(0);
+	}
 }
 
 .cursor {
@@ -46,10 +57,10 @@ body.rendered > #__next {
 	cursor: wait !important;
 }
 
-.section-btn {
-	position: relative;
-}
-
 .loaded {
 	transform: translateY(-100%);
+}
+
+.section-btn {
+	position: relative;
 }

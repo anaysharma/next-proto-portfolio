@@ -1,5 +1,6 @@
 import { Html, Head, Main, NextScript } from 'next/document';
 import Image from 'next/image';
+import { MotionConfig } from 'framer-motion';
 
 export default function Document() {
 	return (
@@ -11,7 +12,9 @@ export default function Document() {
 						<Image src="/oval.svg" alt="loader" height={20} width={20} />
 					</div>
 				</div>
-				<Main />
+				<MotionConfig reducedMotion="user">
+					<Main />
+				</MotionConfig>
 				<NextScript />
 			</body>
 		</Html>

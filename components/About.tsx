@@ -13,9 +13,9 @@ export default function About(props: { setNavlink: Function }) {
 		mountCount += 1;
 		animate(
 			'.letter',
-			{ y: [40, 0], x: [100, 0], opacity: [0, 1] },
+			{ y: [100, 0], opacity: [0, 1] },
 			{
-				delay: stagger(0.06, { from: 'first' }),
+				delay: stagger(0.1, { from: 'first' }),
 				duration: 0.6,
 				ease: 'circOut',
 			}
@@ -73,7 +73,7 @@ export default function About(props: { setNavlink: Function }) {
 				<motion.p
 					initial={{ y: 20, opacity: 0 }}
 					animate={{ y: 0, opacity: 1 }}
-					transition={{ duration: 0.8, delay: 0.6 }}
+					transition={{ duration: 0.8, delay: 0.8 }}
 					className="m-0 bg-black px-4 py-2"
 				>
 					A very passionate front end dev developing pixel-perfect, User
@@ -82,7 +82,7 @@ export default function About(props: { setNavlink: Function }) {
 				<motion.div
 					initial={{ y: 20, opacity: 0 }}
 					animate={{ y: 0, opacity: 1 }}
-					transition={{ duration: 0.8, delay: 0.8 }}
+					transition={{ duration: 0.8, delay: 1.4 }}
 					className="mt-auto flex w-full items-center justify-between gap-4"
 				>
 					<motion.a
@@ -90,6 +90,7 @@ export default function About(props: { setNavlink: Function }) {
 						target="#"
 						className="mr-auto w-28 rounded-full py-2 text-center text-black"
 						style={{ background: '#d9dacb' }}
+						download="file"
 					>
 						Resume
 					</motion.a>
@@ -135,7 +136,7 @@ export default function About(props: { setNavlink: Function }) {
 				layoutId="work"
 				className="section-btn work w-12 bg-black"
 				whileHover={{ scaleY: 1.2 }}
-				transition={{ duration: 0.7, ease: cubicBezier(0.3, 0, 0, 1) }}
+				transition={{ duration: 0.6, ease: cubicBezier(0.3, 0, 0, 1) }}
 			></motion.button>
 
 			<motion.button
@@ -143,7 +144,7 @@ export default function About(props: { setNavlink: Function }) {
 				layoutId="skills"
 				className="section-btn skills w-12 bg-black"
 				whileHover={{ scaleY: 1.2 }}
-				transition={{ duration: 0.7, ease: cubicBezier(0.3, 0, 0, 1) }}
+				transition={{ duration: 0.6, ease: cubicBezier(0.3, 0, 0, 1) }}
 			></motion.button>
 
 			<motion.button
@@ -151,7 +152,7 @@ export default function About(props: { setNavlink: Function }) {
 				layoutId="contact"
 				className="section-btn contact w-12 bg-black"
 				whileHover={{ scaleY: 1.2 }}
-				transition={{ duration: 0.7, ease: cubicBezier(0.3, 0, 0, 1) }}
+				transition={{ duration: 0.6, ease: cubicBezier(0.3, 0, 0, 1) }}
 			></motion.button>
 		</div>
 	);
