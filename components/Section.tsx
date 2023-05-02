@@ -19,7 +19,7 @@ export default function Section(props: {
 			layoutId={id}
 			className="absolute inset-0 grid place-items-center overflow-y-auto bg-black"
 			transition={{
-				layout: { duration: 0.7, ease: cubicBezier(0.3, 0.4, 0, 1) },
+				layout: { duration: 0.6, ease: cubicBezier(0.3, 0.4, 0, 1) },
 			}}
 		>
 			<div style={{ height: '200vh' }}></div>
@@ -32,7 +32,7 @@ export default function Section(props: {
 			</motion.div>
 			<div style={{ height: '200vh' }}></div>
 			<motion.div
-				className="fixed left-28 top-14 h-px origin-left"
+				className="fixed left-28 top-14 hidden h-px origin-left md:block"
 				style={{
 					scaleX: scrollYProgress,
 					width: 'calc(100% - 420px)',

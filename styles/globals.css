@@ -9,7 +9,7 @@
 
 * {
 	box-sizing: border-box;
-	cursor: none !important;
+	/* cursor: none !important; */
 }
 
 body {

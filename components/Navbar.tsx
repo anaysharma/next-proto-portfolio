@@ -22,18 +22,20 @@ export default function Navbar(props: {
 	return (
 		<motion.ul
 			ref={scope}
-			className={'fixed left-9 top-9 z-10 m-0 flex gap-1 p-0'}
+			className={
+				'fixed bottom-9 left-9 z-10 m-0 flex gap-1 p-0 md:bottom-auto md:top-9'
+			}
 			style={{ width: 'calc(100vw - 5rem)' }}
 		>
 			{navItems.map((item, index) => (
 				<li
 					key={index}
 					onClick={() => setCurrentLink(item)}
-					className="relative list-none p-2 opacity-0"
+					className="relative cursor-pointer list-none p-2 opacity-0"
 					style={{ marginRight: index === 0 ? 'auto' : 0 }}
 				>
 					<motion.span
-						className="relative z-10 p-2 mix-blend-exclusion"
+						className="text-md relative z-10 p-2 mix-blend-exclusion hover:text-white"
 						style={{ color: currentLink === item ? 'white' : '#d9dacb' }}
 					>
 						{index === 0 ? String.fromCharCode(0x2715) : item}

@@ -43,16 +43,17 @@ export default function About(props: { setNavlink: Function }) {
 	}, [animate, sectionAnimate]);
 
 	return (
-		<div className="flex gap-2" ref={sectionScope}>
+		<div
+			className="flex h-screen flex-col justify-end gap-4 p-4 pb-20 md:h-auto md:flex-row md:justify-normal md:gap-2 md:p-0"
+			ref={sectionScope}
+		>
 			<motion.div
 				layoutId="min"
-				className="mx-auto flex flex-col gap-1 border border-black p-5 backdrop-blur-sm backdrop-brightness-150 backdrop-saturate-150"
+				className="mx-auto flex flex-col gap-2 border border-black p-2 backdrop-blur-sm backdrop-brightness-150 backdrop-saturate-150 md:gap-4 md:p-5"
 				style={{
-					backgroundImage: 'radial-gradient( #0000 1px, #000 1px )',
-					backgroundSize: '4px 4px',
-					backgroundPosition: '4px 4px',
-					height: 218,
-					width: 514,
+					backgroundImage: 'radial-gradient( #0000 40%, #000 40% )',
+					backgroundSize: '0.3rem 0.3rem',
+					backgroundPosition: '0.3rem 0.3rem',
 				}}
 			>
 				<div
@@ -73,8 +74,8 @@ export default function About(props: { setNavlink: Function }) {
 				<motion.p
 					initial={{ y: 20, opacity: 0 }}
 					animate={{ y: 0, opacity: 1 }}
-					transition={{ duration: 0.8, delay: 0.8 }}
-					className="m-0 bg-black px-4 py-2"
+					transition={{ duration: 0.6, delay: 0.8 }}
+					className="md:text-md m-0 bg-black px-4 py-2 md:w-[60ch]"
 				>
 					A very passionate front end dev developing pixel-perfect, User
 					friendly, engaging UI and UX for a better Internet.
@@ -82,7 +83,7 @@ export default function About(props: { setNavlink: Function }) {
 				<motion.div
 					initial={{ y: 20, opacity: 0 }}
 					animate={{ y: 0, opacity: 1 }}
-					transition={{ duration: 0.8, delay: 1.4 }}
+					transition={{ duration: 0.6, delay: 1.2 }}
 					className="mt-auto flex w-full items-center justify-between gap-4"
 				>
 					<motion.a
@@ -134,7 +135,7 @@ export default function About(props: { setNavlink: Function }) {
 			<motion.button
 				onClick={() => setNavlink('work')}
 				layoutId="work"
-				className="section-btn work w-12 bg-black"
+				className="section-btn work h-12 w-full bg-black md:h-auto md:w-12"
 				whileHover={{ scaleY: 1.2 }}
 				transition={{ duration: 0.6, ease: cubicBezier(0.3, 0, 0, 1) }}
 			></motion.button>
@@ -142,7 +143,7 @@ export default function About(props: { setNavlink: Function }) {
 			<motion.button
 				onClick={() => setNavlink('skills')}
 				layoutId="skills"
-				className="section-btn skills w-12 bg-black"
+				className="section-btn skills h-12 w-full bg-black md:h-auto md:w-12"
 				whileHover={{ scaleY: 1.2 }}
 				transition={{ duration: 0.6, ease: cubicBezier(0.3, 0, 0, 1) }}
 			></motion.button>
@@ -150,7 +151,7 @@ export default function About(props: { setNavlink: Function }) {
 			<motion.button
 				onClick={() => setNavlink('contact')}
 				layoutId="contact"
-				className="section-btn contact w-12 bg-black"
+				className="section-btn contact h-12 w-full bg-black md:h-auto md:w-12"
 				whileHover={{ scaleY: 1.2 }}
 				transition={{ duration: 0.6, ease: cubicBezier(0.3, 0, 0, 1) }}
 			></motion.button>
