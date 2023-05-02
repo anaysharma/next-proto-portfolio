@@ -44,7 +44,7 @@ export default function About(props: { setNavlink: Function }) {
 
 	return (
 		<div
-			className="flex h-screen flex-col justify-end gap-4 p-4 pb-20 md:h-auto md:flex-row md:justify-normal md:gap-2 md:p-0"
+			className="flex h-screen flex-col justify-end gap-2 p-4 pb-28 md:h-auto md:flex-row md:justify-normal md:p-0"
 			ref={sectionScope}
 		>
 			<motion.div

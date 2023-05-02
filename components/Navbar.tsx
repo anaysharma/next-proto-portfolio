@@ -23,7 +23,7 @@ export default function Navbar(props: {
 		<motion.ul
 			ref={scope}
 			className={
-				'fixed bottom-9 left-9 z-10 m-0 flex gap-1 p-0 md:bottom-auto md:top-9'
+				'fixed bottom-14 left-9 z-10 m-0 flex gap-1 p-0 md:bottom-auto md:top-9'
 			}
 			style={{ width: 'calc(100vw - 5rem)' }}
 		>
