@@ -7,6 +7,7 @@ export default function useMousePosition() {
 		const mouseMoveHandler = (event: MouseEvent) => {
 			const { clientX, clientY } = event;
 			setMousePosition({ x: clientX, y: clientY });
+			// requestAnimationFrame(mouseMoveHandler);
 		};
 		document.addEventListener('mousemove', mouseMoveHandler);
 

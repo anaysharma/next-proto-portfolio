@@ -32,7 +32,7 @@ export default function Home() {
 				<main
 					className={
 						abel.className +
-						' relative flex h-screen flex-col items-center justify-center bg-cover'
+						' relative flex h-screen flex-col items-center justify-end bg-cover'
 					}
 				>
 					{navlink === 'home' && <About setNavlink={setNavlink} />}
@@ -67,7 +67,7 @@ export default function Home() {
 							id="skills"
 						/>
 					)}
-					<div className="absolute inset-0 -z-10">
+					<div className="absolute inset-0 -z-10 grid place-items-center">
 						<Image
 							priority={true}
 							className="absolute bottom-0"
@@ -79,7 +79,7 @@ export default function Home() {
 					</div>
 				</main>
 			</MotionConfig>
-			{/* <Cursor /> */}
+			<Cursor />
 		</>
 	);
 }
