@@ -2,7 +2,7 @@ import { cubicBezier, motion, stagger, useAnimate } from 'framer-motion';
 import Image from 'next/image';
 import { useEffect } from 'react';
 
-let mountCount = 0; // allows animation to run on initial mount
+let mountCount = -1; // allows animation to run on initial mount
 
 export default function About(props: { setNavlink: Function }) {
 	const { setNavlink } = props;
@@ -27,11 +27,11 @@ export default function About(props: { setNavlink: Function }) {
 			timeout = setTimeout(() => {
 				sectionAnimate(
 					'.section-btn',
-					{ scaleY: [1, 1.2, 1] },
+					{ x: [0, 40, 0] },
 					{
-						delay: stagger(0.2, { from: 'first' }),
-						duration: 0.6,
-						ease: 'easeOut',
+						delay: stagger(0.08, { from: 'first' }),
+						duration: 1.2,
+						ease: 'easeInOut',
 					}
 				);
 			}, 1000);
@@ -44,19 +44,19 @@ export default function About(props: { setNavlink: Function }) {
 
 	return (
 		<div
-			className="flex h-screen flex-col justify-end gap-2 p-2 md:h-auto md:flex-row"
+			className="flex h-screen flex-col justify-end gap-4 p-2 md:h-auto md:flex-row"
 			ref={sectionScope}
 		>
 			<div className="mx-auto flex flex-col gap-1 bg-black/80 p-8 backdrop-blur backdrop-saturate-150 md:gap-4">
 				<div
 					ref={scope}
-					className="flex w-min overflow-hidden text-5xl font-bold uppercase"
+					className="flex w-min overflow-hidden text-5xl font-thin"
 				>
 					{'Anay Sharma'.split('').map((item, i) => (
 						<div
 							key={i}
 							className="letter my-auto text-[#d9dacb]"
-							style={item === 'S' ? { paddingLeft: 12 } : { paddingLeft: 1 }}
+							style={item === 'S' ? { paddingLeft: 12 } : { paddingLeft: 0 }}
 						>
 							{item}
 						</div>
@@ -128,7 +128,7 @@ export default function About(props: { setNavlink: Function }) {
 			<motion.button
 				onClick={() => setNavlink('work')}
 				layoutId="work"
-				className="section-btn work h-12 w-full bg-black md:h-auto md:w-16"
+				className="section-btn work h-12 w-full bg-black md:h-auto md:w-12"
 				whileHover={{ scaleY: 1.2 }}
 				transition={{ duration: 0.6, ease: cubicBezier(0.3, 0, 0, 1) }}
 			></motion.button>
@@ -136,7 +136,7 @@ export default function About(props: { setNavlink: Function }) {
 			<motion.button
 				onClick={() => setNavlink('skills')}
 				layoutId="skills"
-				className="section-btn skills h-12 w-full bg-black md:h-auto md:w-16"
+				className="section-btn skills h-12 w-full bg-black md:h-auto md:w-12"
 				whileHover={{ scaleY: 1.2 }}
 				transition={{ duration: 0.6, ease: cubicBezier(0.3, 0, 0, 1) }}
 			></motion.button>
@@ -144,7 +144,7 @@ export default function About(props: { setNavlink: Function }) {
 			<motion.button
 				onClick={() => setNavlink('contact')}
 				layoutId="contact"
-				className="section-btn contact h-12 w-full bg-black md:h-auto md:w-16"
+				className="section-btn contact h-12 w-full bg-black md:h-auto md:w-12"
 				whileHover={{ scaleY: 1.2 }}
 				transition={{ duration: 0.6, ease: cubicBezier(0.3, 0, 0, 1) }}
 			></motion.button>

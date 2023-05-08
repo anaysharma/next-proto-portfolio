@@ -21,7 +21,7 @@ body {
 
 div#__next {
 	opacity: 0;
-	scale: 0.8;
+	scale: 0.6;
 	/* transform: rotate3d(1, 0, 0, -20deg); */
 	/* transform-origin: top; */
 	transition: scale 1s 200ms, opacity 1s 200ms, transform 1s 200ms;
@@ -29,7 +29,7 @@ div#__next {
 }
 
 div#__next .background-image > img {
-	scale: 1.6;
+	scale: 2;
 	transition: scale 1s 0.2s;
 }
 
