@@ -2,7 +2,7 @@ import { cubicBezier, motion, stagger, useAnimate } from 'framer-motion';
 import Image from 'next/image';
 import { useEffect } from 'react';
 
-let mountCount = -1; // allows animation to run on initial mount
+let mountCount = 0; // allows animation to run on initial mount
 
 export default function About(props: { setNavlink: Function }) {
 	const { setNavlink } = props;
