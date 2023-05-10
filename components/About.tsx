@@ -8,6 +8,21 @@ export default function About(props: { setNavlink: Function }) {
 	const { setNavlink } = props;
 	const [scope, animate] = useAnimate();
 	const [sectionScope, sectionAnimate] = useAnimate();
+	useEffect(() => {
+		if (typeof window !== 'undefined') {
+			const loader = document.getElementById('page-loader');
+
+			document.body.style.opacity = '1';
+			document.body.classList.add('rendered');
+
+			if (loader) {
+				loader.classList.add('loaded');
+				setTimeout(() => {
+					loader.remove();
+				}, 1000);
+			}
+		}
+	}, []);
 
 	useEffect(() => {
 		mountCount += 1;

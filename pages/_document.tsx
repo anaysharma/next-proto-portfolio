@@ -6,7 +6,7 @@ export default function Document() {
 	return (
 		<Html lang="en" style={{ background: 'black' }}>
 			<Head />
-			<body className=" overflow-hidden">
+			<body className="overflow-hidden">
 				<div
 					id="page-loader"
 					className="fixed inset-0 z-50 grid place-items-center bg-black"

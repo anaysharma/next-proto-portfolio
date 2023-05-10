@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import Head from 'next/head';
 
 import { Abel } from 'next/font/google';
@@ -16,6 +16,22 @@ const abel = Abel({ subsets: ['latin'], weight: ['400'] });
 
 export default function Home() {
 	const [navlink, setNavlink] = useState<string>('home');
+	const [imageLoaded, setImageLoaded] = useState(false);
+	useEffect(() => {
+		if (imageLoaded) {
+			const loader = document.getElementById('page-loader');
+
+			document.body.style.opacity = '1';
+			document.body.classList.add('rendered');
+
+			if (loader) {
+				loader.classList.add('loaded');
+				setTimeout(() => {
+					loader.remove();
+				}, 1000);
+			}
+		}
+	}, [imageLoaded]);
 
 	return (
 		<>
@@ -75,6 +91,7 @@ export default function Home() {
 							height={1152}
 							width={2048}
 							alt="background image"
+							onLoad={() => setImageLoaded(true)}
 						/>
 					</div>
 				</main>
