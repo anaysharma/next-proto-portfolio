@@ -7,7 +7,11 @@ export default function Cursor() {
 	const size = useMotionValue(1);
 
 	const scaleSpringConfig = { damping: 10, stiffness: 600 };
+	const cursorSpringConfig = { damping: 30, stiffness: 300 };
 	const sizeSpring = useSpring(size, scaleSpringConfig);
+
+	const cursorXSpring = useSpring(cursorX, cursorSpringConfig);
+	const cursorYSpring = useSpring(cursorY, cursorSpringConfig);
 
 	useEffect(() => {
 		const shrink = () => size.set(2);
@@ -36,8 +40,8 @@ export default function Cursor() {
 			className="cursor pointer-events-none fixed left-0 top-0 z-50 aspect-square rounded-full bg-transparent backdrop-invert"
 			style={{
 				height: 10,
-				x: cursorX,
-				y: cursorY,
+				x: cursorXSpring,
+				y: cursorYSpring,
 				scale: sizeSpring,
 			}}
 			transition={{ duration: 0.6 }}
