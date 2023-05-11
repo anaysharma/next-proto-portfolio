@@ -6,7 +6,7 @@ export default function Navbar(props: {
 	setCurrentLink: Function;
 }) {
 	const { currentLink, setCurrentLink } = props;
-	const navItems = ['home', 'work', 'skills', 'contact'];
+	const navItems = ['home', 'work', 'about', 'contact'];
 	const [scope, animate] = useAnimate();
 
 	useEffect(() => {

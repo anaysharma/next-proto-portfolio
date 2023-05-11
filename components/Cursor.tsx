@@ -16,6 +16,10 @@ export default function Cursor() {
 	useEffect(() => {
 		const shrink = () => size.set(2);
 		const reset = () => size.set(1);
+		const mouseLeaveHandler = () => {
+			cursorX.set(-100);
+			cursorY.set(-100);
+		};
 		const mouseMoveHandler = (event: MouseEvent) => {
 			const { clientX, clientY } = event;
 			cursorX.set(clientX - 5);
@@ -25,11 +29,13 @@ export default function Cursor() {
 		document.addEventListener('mousemove', mouseMoveHandler);
 		document.addEventListener('mousedown', shrink);
 		document.addEventListener('mouseup', reset);
+		document.addEventListener('mouseleave', mouseLeaveHandler);
 
 		return () => {
 			document.removeEventListener('mousemove', mouseMoveHandler);
 			document.removeEventListener('mousedown', shrink);
 			document.removeEventListener('mouseup', reset);
+			document.removeEventListener('mouseleave', mouseLeaveHandler);
 		};
 	}, [cursorX, cursorY, size]);
 

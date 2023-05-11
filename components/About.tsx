@@ -80,7 +80,7 @@ export default function About(props: { setNavlink: Function }) {
 				</div>
 
 				<motion.p
-					initial={{ y: 80, opacity: 0, rotateX: '-40deg' }}
+					initial={{ y: 50, opacity: 0, rotateX: '-40deg' }}
 					animate={{ y: 0, opacity: 1, rotateX: 0 }}
 					transition={{ duration: 0.6, delay: 0.8 }}
 					className="m-0 md:w-[60ch]"
@@ -91,7 +91,7 @@ export default function About(props: { setNavlink: Function }) {
 				<motion.div
 					initial={{ y: 60, opacity: 0, rotateX: '-40deg' }}
 					animate={{ y: 0, opacity: 1, rotateX: 0 }}
-					transition={{ duration: 0.6, delay: 1.2 }}
+					transition={{ duration: 0.6, delay: 1 }}
 					className="flex w-full items-center justify-between gap-4 pt-2"
 				>
 					<motion.a
@@ -149,9 +149,9 @@ export default function About(props: { setNavlink: Function }) {
 			></motion.button>
 
 			<motion.button
-				onClick={() => setNavlink('skills')}
-				layoutId="skills"
-				className="section-btn skills h-12 w-full bg-black md:h-auto md:w-12"
+				onClick={() => setNavlink('about')}
+				layoutId="about"
+				className="section-btn about h-12 w-full bg-black md:h-auto md:w-12"
 				whileHover={{ scaleY: 1.2 }}
 				transition={{ duration: 0.6, ease: cubicBezier(0.3, 0, 0, 1) }}
 			></motion.button>

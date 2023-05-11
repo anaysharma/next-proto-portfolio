@@ -75,12 +75,12 @@ export default function Home() {
 						/>
 					)}
 
-					{navlink === 'skills' && (
+					{navlink === 'about' && (
 						<Section
-							content="skills"
+							content="about"
 							navlink={navlink}
 							setNavlink={setNavlink}
-							id="skills"
+							id="about"
 						/>
 					)}
 					<div className="background-image absolute inset-0 -z-10 grid place-items-center overflow-hidden">
